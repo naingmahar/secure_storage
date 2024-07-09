@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { ReactTerminal, TerminalContextProvider } from "react-terminal";
 import "./styles.css";
 import { fetchFiles, fetchKey, fetchLogin, fetchRegister } from "../../../feature/apiClient/storage/Auth";
-import { ISecurtiyKey } from "../../../types/models/Storage/SecurityKey";
 import IUser from "@repo/common";
 import { ColumnContainer, RowContainer } from "../../../componet/atoms/Container/FlexContainer";
 import FileUpload from "../../../componet/atoms/FileUpload";
@@ -78,7 +77,7 @@ export function Terminal() {
     if(state?.email && state.name){
       let user:IUser = {email:state.email,name:state.name,publicKey:getAllKey().keys.publicKey}
       fetchRegister(user)
-        .then((data)=>{cb()})
+        .then(()=>{cb()})
         .catch(err=>"Error "+err)
     }else{
       cb()
@@ -110,13 +109,13 @@ export function Terminal() {
       _login(username,(msg)=>stopLoading(msg))
       return createLoading("Authenticating");
     },
-    hide_files:(prompt:string)=>{
+    hide_files:()=>{
       setShowFiles(false)
     },
-    hide_upload:(prompt:string)=>{
+    hide_upload:()=>{
       setShowUpload(false)
     },
-    show_upload:(prompt:string)=>{
+    show_upload:()=>{
       if(isAuthUser()) {
         setShowUpload(true)
         return `>>>Okay sir`
@@ -125,7 +124,7 @@ export function Terminal() {
       }
     },
 
-    show_files:(prompt:string)=>{
+    show_files:()=>{
       if(isAuthUser()) {
         setShowFiles(true)
         fileList(()=>stopLoading("Successfully fetch your files"))

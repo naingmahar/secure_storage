@@ -9,6 +9,7 @@ export const UploadProductPhoto = () => {
     return (
         <ProgressContainer data={state.product.images.length} progress={27} title="Drop or Choose your product photo">
             <CardContainer className="flex justify-center items-center flex-col py-5 mb-10">
+                {/* @ts-ignore */}
                 <FileUpload onChange={(images)=>{
                     setState(current=>{
                         let product = {...current.product,...{images}}

@@ -50,6 +50,7 @@ export const ProfilePage = () => {
             <SuccessModel {...generateSuccessModelParam()}  />
             <ErrorModel {...generateErrorModelParam(error)}  />
             <CardContainer>
+                {/* @ts-ignore */}
                 <CoCoFormPage 
                     formData={
                         [

@@ -87,6 +87,7 @@ const CoCoForm =React.forwardRef<ICoCoFormRef,ICoCoFormProps>((props, ref) => {
             <div key={param.fieldName} className="mb-5" >
                 <InputLabel icon={param.icon} label={param.label}  />
                 <p className="label-text">{param.description}</p>
+                {/* @ts-ignore */}
                 <FileUpload value={param.value} onChange={(val)=>{setFieldData(param.fieldName,val)}} />
             </div>
         )

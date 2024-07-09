@@ -3,7 +3,7 @@ import { ELABELS } from "../../assets/static_string"
 import BasicInput from "../../componet/atoms/Input/BasicInput"
 import ResponsiveButton from "../../componet/atoms/button/responsiveButton"
 import { useLogin } from "../../feature/query/login/Login"
-import { Label, Text } from "../../componet/atoms/typography/typography"
+import {  Text } from "../../componet/atoms/typography/typography"
 import { useNavigate } from "react-router-dom"
 
 const LoginPage = () =>{

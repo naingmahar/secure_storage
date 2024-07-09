@@ -60,6 +60,7 @@ export const CreateCustomer: FC<IProps> = () => {
 
             <MainContainer className="mt-24">
                 <RowContainer>
+                    {/*@ts-ignore */}
                     <CoCoFormPage
                         formData={
                             [

@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import "./file.css"
 import { Icon, IconKey } from "../icons";
-import ImgPreview, { IconPreview } from "./ImagePreview";
+// import ImgPreview, { IconPreview } from "./ImagePreview";
 import { uploadImage } from "../../../feature/apiClient/Common";
 import { RowContainer } from "../Container/FlexContainer";
-import { EFileIcons, FileIcon, FileIcons } from "./FileIcon";
+import { EFileIcons } from "./FileIcon";
+import { IconPreview } from "./ImagePreview";
 
 const FileUpload = (props:{onChange:(img:[string])=>any,value?:[{url:string}],onFinshed:(message:string,isError:boolean)=>any}) => {
 
@@ -109,13 +110,13 @@ const FileUpload = (props:{onChange:(img:[string])=>any,value?:[{url:string}],on
         })
     }
 
-    const onRemoveImage = (delIndex:number) => {
-        let temp:any[] = [];
-        files.map((img,index)=>{
-            if(index !== delIndex) temp.push(img)
-        })
-        setFile(temp)
-    }
+    // const onRemoveImage = (delIndex:number) => {
+    //     let temp:any[] = [];
+    //     files.map((img,index)=>{
+    //         if(index !== delIndex) temp.push(img)
+    //     })
+    //     setFile(temp)
+    // }
   
     
     return (
@@ -128,7 +129,7 @@ const FileUpload = (props:{onChange:(img:[string])=>any,value?:[{url:string}],on
                 { dragActive && <div id="drag-file-element" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div> }
             </form> 
             {
-                files.map((url,index)=>(
+                files.map(()=>(
                     <IconPreview name={iconName} />
                     // <FileIcon name={iconName} />
                     //  <ImgPreview key={index}  url={url} onDelete={() => onRemoveImage(index)} />

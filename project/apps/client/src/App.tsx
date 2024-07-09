@@ -10,7 +10,6 @@ import { RecoilRoot } from 'recoil';
 import { Home } from './pages/Home';
 import { RegisterRoutes } from './CreateShopAndProductRoute';
 import { ProductList } from './pages/products/List';
-import { PublicProductList } from './pages/products/public';
 import { ProfilePage } from './pages/Profile';
 import { ShopPage } from './pages/Shop';
 import { PubilcProductDetailsPage } from './pages/products/public/details';

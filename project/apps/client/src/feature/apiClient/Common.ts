@@ -1,5 +1,5 @@
 import { instance } from "./config/Instance";
-import { END_POINT, SECURITY_END_POINT } from "./config/endpoint";
+import { SECURITY_END_POINT } from "./config/endpoint";
 import {} from './storage/Auth'
 export const uploadImage = async (form:FormData) => {
     let res = await instance.post(SECURITY_END_POINT.fileUpload,form,{

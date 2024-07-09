@@ -102,6 +102,7 @@ export const ProductCreatePage = () =>{
         <div className="w-screen h-full pt-5">
             <SuccessModel {...generateSuccessModelParam()}  />
             <ErrorModel {...generateErrorModelParam(error)}  />
+            {/* @ts-ignore */}
             <CoCoFormPage 
                 formData={
                     [

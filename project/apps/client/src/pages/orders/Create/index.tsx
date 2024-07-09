@@ -4,6 +4,7 @@ import CoCoFormPage from "../../../componet/themes/coco/formPage"
 
 const CreateOrderPage = () => {
     return (
+        // @ts-ignore
         <CoCoFormPage 
             formData={
                 [
