@@ -1,0 +1,18 @@
+.loop_text {
+    background: #FFFFFF;
+    background: linear-gradient(to left, #FFFFFF 0%, #FF0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+}
+
+#terminalEditor{
+    min-height: 80vh;
+}
+
+/* #terminalEditor{
+    background: #25CC0F;
+    background: linear-gradient(to bottom right, #25CC0F 0%, #9E3212 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #FFFFFF;
+} */
