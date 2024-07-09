@@ -4,7 +4,7 @@ import { TransformInterceptor } from './transform.interceptor';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule,{ cors: true });
+  const app = await NestFactory.create(AppModule);
   // app.useGlobalInterceptors(new TransformInterceptor());
 
   const config = new DocumentBuilder()
@@ -16,7 +16,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
   
-  // app.enableCors();
+  app.enableCors();
   await app.listen(3000);
 }
 bootstrap();
