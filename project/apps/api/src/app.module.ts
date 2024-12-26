@@ -1,53 +1,47 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
-import { UsersModule } from './users/users.module';
-import { SecurityModule } from './security/security.module';
+import { AdminModule } from './admin/admin.module';
+import { QuizModule } from './quiz/quiz.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DataSource } from 'typeorm';
-import { User } from './users/model/user.model';
-import { KeyModel } from './security/model/key.model';
+import { ConfigModule } from '@nestjs/config';
+import { Admin } from './admin/model/admin.model';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { TransformInterceptor } from './transform.interceptor';
 import { ErrorsInterceptor } from './errors.interceptor';
+import { AuthModule } from './auth/auth.module';
 import { FileModule } from './file/file.module';
-import { ConfigModule } from '@nestjs/config';
+import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
-    AuthModule, UsersModule, SecurityModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'ls-560afc17c7edd1842038e3fbd47d464cbc449bf3.cadzrzf9bfop.ap-southeast-1.rds.amazonaws.com',
       port: 3306,
       username: 'dbmasteruser',
       password: 'sY#duP7^[Oz!Gk+0F4$yC+M5Md,2<&C3',
-      database: 'SS_DB',
-      entities: [User,KeyModel],
+      database: 'SYH_DB',
+      entities: [Admin],
       synchronize: true,
       autoLoadEntities: true,
     }),
-    FileModule,
     ConfigModule.forRoot({
       envFilePath: '.env',
       isGlobal: true,
     }),
-  ],
+    AdminModule, QuizModule,AuthModule,FileModule, CategoryModule],
   controllers: [AppController],
   providers: [
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: TransformInterceptor,
-    },
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: ErrorsInterceptor,
-
-    },
-    AppService
-  ],
+      {
+        provide: APP_INTERCEPTOR,
+        useClass: TransformInterceptor,
+      },
+      {
+        provide: APP_INTERCEPTOR,
+        useClass: ErrorsInterceptor,
+  
+      }
+    ,AppService],
 })
-export class AppModule {
-  constructor(private dataSource: DataSource) {}
-}
+export class AppModule {}

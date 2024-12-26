@@ -6,8 +6,8 @@ import { IconKey } from "../../../componet/atoms/icons"
 import { LoadingHeader } from "../../../componet/molecules/LoadingLabel"
 import { PublicNavBar } from "../../../componet/themes/nav"
 import { useCreateOrder } from "../../../feature/query/Order/createOrder"
-import { useRecoilState } from "recoil"
-import { shoppingCartState } from "../../../feature/recoilState"
+// import { useRecoilState } from "recoil"
+// import { shoppingCartState } from "../../../feature/recoilState"
 import { useEffect } from "react"
 import { ICreateOrder, OrderItem } from "../../../types/models/IOrder"
 import { STORAGE_KEY, Storage } from "../../../feature/storage/localstorage"
@@ -17,23 +17,23 @@ import { ICustomer } from "../../../types/models/ICustomer"
 export const ConfirmOrder = () => {
 
     const orderQuery = useCreateOrder();
-    const [carts, setCarts] = useRecoilState(shoppingCartState); 
+    // const [carts, setCarts] = useRecoilState(shoppingCartState); 
     const customer = Storage.getItemByObjectOrArray<ICustomer>(STORAGE_KEY.customer); 
     const navigate= useNavigate();
 
     useEffect(()=>{
         let orderItems:OrderItem[] = []
 
-        carts.map((row)=>{
-            orderItems.push(
-            {
-                amount:row.item.price * row.count,
-                price:row.item.price,
-                product_id:row.id,
-                qty:row.count
-            }
-            )
-        })
+        // carts.map((row)=>{
+        //     orderItems.push(
+        //     {
+        //         amount:row.item.price * row.count,
+        //         price:row.item.price,
+        //         product_id:row.id,
+        //         qty:row.count
+        //     }
+        //     )
+        // })
 
         let param:ICreateOrder = {
             "shop_id": 3,
@@ -45,7 +45,7 @@ export const ConfirmOrder = () => {
         }
         orderQuery.mutate(param,{
             onSuccess:()=>{
-                setCarts([])
+                // setCarts([])
             }
         })
     },[])

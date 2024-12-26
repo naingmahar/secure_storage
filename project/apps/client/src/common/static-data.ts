@@ -8,3 +8,14 @@ export const DELIVERY_TYPES= [
     {key:"1",label:"Grab Send"},                
     {key:"2",label:"DHL"},
     {key:"3",label:"Pick Up"}]
+
+
+
+export const ANSWERS= [
+    {key:"1",label:"A"},                
+    {key:"2",label:"B"},
+    {key:"3",label:"C"},
+    {key:"4",label:"D"},
+    {key:"5",label:"E"},
+    {key:"6",label:"F"},
+]

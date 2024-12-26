@@ -1,8 +1,10 @@
 import { IDefaultFormat } from "./ILogin";
 
 export interface ICategory {
+    id?:string|number,
     name:string,
-    description:string
+    image:string,
+    flag?:boolean
 }
 
 

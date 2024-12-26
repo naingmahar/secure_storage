@@ -6,5 +6,5 @@ export const uploadImage = async (form:FormData) => {
         headers: {
           "Content-Type": "multipart/form-data",
         }});
-    return res.data
+    return res.data.url
 }

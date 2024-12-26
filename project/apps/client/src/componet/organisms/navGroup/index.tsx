@@ -22,9 +22,10 @@ const NavGroup = () => {
     }
 
     const navData = [
-        {label:"Orders",icon:IconKey.order,route:"/owner/orders"},
+        {label:"Quiz",icon:IconKey.order,route:"/owner/quiz"},
+        {label:"Categories",icon:IconKey.order,route:"/owner/Categories"},
         {label:"Customers",icon:IconKey.group,route:"/owner/customers"},
-        {label:"Products",icon:IconKey.product,route:"/owner/products"},
+        {label:"Withdraw",icon:IconKey.product,route:"/owner/products"},
         {label:"Setting",icon:IconKey.setting,route:"/owner/setting"},
     ]
 

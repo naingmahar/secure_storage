@@ -25,15 +25,15 @@ const OrderPage = () => {
                     title={["ID","Customer","Total","Items","Order Date","Status"]}  
                     types={[
                         {itemKey:"id",type:"string",alt:"",className:"font-semibold"},
-                        {itemKey:"customer",type:"string",alt:"",className:"",customDataFunc(data) {
-                            return <div>{data.customer.email}</div>
-                        },},
-                        {itemKey:"amount",type:"string",alt:"",className:""},
-                        {itemKey:"items",type:"string",alt:"",className:"",customDataFunc(data) {
-                            let labels:JSX.Element[] = []
-                            data.order_items.map(row=>{labels.push(<div>{row.product.qty}x {row.product.name}</div>)})
-                            return <div>{labels}</div>
-                        },},
+                        // {itemKey:"customer",type:"string",alt:"",className:"",customDataFunc(data) {
+                        //     return <div>{data.customer.email}</div>
+                        // },},
+                        // {itemKey:"amount",type:"string",alt:"",className:""},
+                        // {itemKey:"items",type:"string",alt:"",className:"",customDataFunc(data) {
+                        //     let labels:JSX.Element[] = []
+                        //     data.order_items.map(row=>{labels.push(<div>{row.product.qty}x {row.product.name}</div>)})
+                        //     return <div>{labels}</div>
+                        // },},
                         {itemKey:"order_date",type:"string",alt:"",className:""},
                         {itemKey:"order_status",type:"changeStatus",alt:"",className:"",action:{onChange:()=>{}}},
                     ]}

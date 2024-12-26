@@ -5,7 +5,7 @@ import { CardContainer } from "../../atoms/Container/CardContainer";
 import { ColumnContainer, RowContainer } from "../../atoms/Container/FlexContainer";
 import IconButton from "../../atoms/button/IconButton";
 import { Icon, IconKey, IconsSize } from "../../atoms/icons";
-import { StatusChangeDropDown } from "../../atoms/tableItem/tRow";
+// import { StatusChangeDropDown } from "../../atoms/tableItem/tRow";
 import { CardDescriptionText, CardHeaderText } from "../../atoms/typography/typography";
 
 const OrderRow = (props:{data:IOrderRes}) => {
@@ -63,7 +63,7 @@ const OrderRow = (props:{data:IOrderRes}) => {
                             </RowContainer>
                         </div>
                     }
-                    <StatusChangeDropDown label={props.data.order_status} onChange={()=>{}} />
+                    {/* <StatusChangeDropDown label={props.data.order_status} onChange={()=>{}} /> */}
                 </ColumnContainer>
             </RowContainer>
             

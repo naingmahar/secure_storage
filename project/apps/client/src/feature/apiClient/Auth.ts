@@ -1,4 +1,3 @@
-import {  TCreateShopRes } from "../../types/models/ICreateShop";
 import { ICustomer, TCustomer } from "../../types/models/ICustomer";
 import {  IReqLogin, TCheckEmail, TLoginRes } from "../../types/models/ILogin";
 import { IUser } from "../../types/models/IRegister";
@@ -8,11 +7,12 @@ import { instance } from "./config/Instance";
 import { END_POINT } from "./config/endpoint";
 
 
-export const fetchLogin = async (data:IReqLogin):Promise<TCreateShopRes> => {
+export const fetchLogin = async (data:IReqLogin)=> {
     let loginRes = await instance.post(END_POINT.login,data);
-    Storage.setItem(STORAGE_KEY.token,loginRes.data.token);
+    console.log(loginRes)
+    Storage.setItem(STORAGE_KEY.token,loginRes.data.access_token);
     StoreUserInfo(loginRes.data.user);
-    return instance.get(END_POINT.auth_user_shop);
+    // return instance.get(END_POINT.auth_user_shop);
 }
 
 export const fetchSendOTP = async (data:{email:string}) => {

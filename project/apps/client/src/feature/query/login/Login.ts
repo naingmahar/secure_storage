@@ -1,7 +1,7 @@
 import {  useMutation } from "@tanstack/react-query";
 import { fetchCheckEmail, fetchCreateCustomer, fetchLogin, fetchUpdateProfile, fetchVerifyOTP } from "../../apiClient/Auth";
 import { IReqLogin, TCheckEmail, TLoginRes } from "../../../types/models/ILogin";
-import { ICreateShop, TCreateShopRes } from "../../../types/models/ICreateShop";
+import { ICreateShop, } from "../../../types/models/ICreateShop";
 import { STORAGE_KEY, Storage } from "../../storage/localstorage";
 import { fetchRegister, fetchSubdomainShop } from "../../apiClient/Shop";
 import { IUser, TRegister } from "../../../types/models/IRegister";
@@ -9,9 +9,9 @@ import { StoreUserInfo } from "../../storage/UserStorage";
 import { ICustomer, TCustomer } from "../../../types/models/ICustomer";
 
 export const useLogin = () => {
-  return useMutation<TCreateShopRes, Error, IReqLogin>(fetchLogin,{
-    onSuccess(data) {
-      Storage.setItemByObjectOrArray(STORAGE_KEY.shop,data.data);
+  return useMutation<any, Error, IReqLogin>(fetchLogin,{
+    onSuccess() {
+      // Storage.setItemByObjectOrArray(STORAGE_KEY.shop,data.data);
     },
   });
 };

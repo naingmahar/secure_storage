@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { fetchAuthUserProducts, fetchGetAllProducts } from "../../apiClient/Products";
+import { fetchAuthUserProducts, fetchGetAllCategories, fetchGetAllProducts } from "../../apiClient/Products";
 
 // const QUERY_KEY = ['Products'];
 
@@ -7,6 +7,12 @@ import { fetchAuthUserProducts, fetchGetAllProducts } from "../../apiClient/Prod
 export const useGetAllProducts = () => {
   return useMutation(fetchGetAllProducts);
 };
+
+
+export const useGetAllCategories = () => {
+  return useMutation(fetchGetAllCategories);
+};
+
 
 export const useGetAuthProducts = () => {
   return useMutation(fetchAuthUserProducts);

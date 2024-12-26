@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { STORAGE_KEY, Storage } from '../../storage/localstorage';
 
+console.log(import.meta.env)
 export const instance = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
     timeout: 10000,

@@ -4,6 +4,7 @@ export const STATIC_STRING = {
 }
 
 export enum EFiledName {
+    categories="Categories",
     name = "name",
     password = "password",
     address = "address",
@@ -12,12 +13,20 @@ export enum EFiledName {
     images='images',
     description="description",
     category="category_id",
+    category_key="category",
     additionalinfo="additionalinfo",
     qty="qty",
     delivery_method_id="delivery_method_id",
     email="email",
     phone="phno",
-    domainName="domainName"
+    domainName="domainName",
+    ans1="q1",
+    ans2="q2",
+    ans3="q3",
+    ans4="q4",
+    ans5="q5",
+    ans6="q6",
+    correctAnswer="ans",
 }
 
 export enum ELABELS {
@@ -50,6 +59,8 @@ export enum ELABELS {
     addOrderDescription = "Set the order details",
     addOrder = "Create Order",
     back = "Back",
+    addQuiz = "Add Quiz",
+    updateQuiz = "Update Quiz",
     addProduct = "Add Product",
     edit = "Edit",
     delete = "Delete",
@@ -85,7 +96,16 @@ export enum ELABELS {
     backToHome="Back to Home",
     shopLink="Shop Link",
     orderNow="Order Now",
-    copyShopUrl="Copy Shop Link"
+    copyShopUrl="Copy Shop Link",
+    quetion="Question",
+    CorrectAnswer="Correct Answer",
+    Answer="Answer",
+    Answer1="Answer1",
+    Answer2="Answer2",
+    Answer3="Answer3",
+    Answer4="Answer4",
+    Answer5="Answer5",
+    Answer6="Answer6",
  }
 
  export const NO_IMAGE_URL = "https://louisville.edu/history/images/noimage.jpg/"

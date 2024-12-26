@@ -12,7 +12,7 @@ import { RegisterRoutes } from './CreateShopAndProductRoute';
 import { ProductList } from './pages/products/List';
 import { ProfilePage } from './pages/Profile';
 import { ShopPage } from './pages/Shop';
-import { PubilcProductDetailsPage } from './pages/products/public/details';
+// import { PubilcProductDetailsPage } from './pages/products/public/details';
 import { CreateCustomer } from './pages/customers/Create Customer';
 import { OrderPreviewPage } from './pages/products/public/orders';
 import { ConfirmOrder } from './pages/products/public/confirmOrder';
@@ -20,6 +20,8 @@ import OrderPage from './pages/orders';
 import CustomersPage from './pages/customers';
 import { SettingPage } from './pages/Setting';
 import { Terminal } from './pages/products/public/terminal';
+import CategoriesPage from './pages/categories';
+import { CreateCategories } from './pages/categories/CreateCategories';
 
 
 const queryClient = new QueryClient()
@@ -43,8 +45,10 @@ function App() {
 
             <Route path='/owner'  element={<Navigate to="/owner/products" />} />
             <Route path='/owner/*' element={<PrivateRoute><NavBar /></PrivateRoute>}> 
-              <Route path='products' element={<ProductList />} />
-              <Route path='products/create' element={<ProductCreatePage />} />
+              <Route path='quiz' element={<ProductList />} />
+              <Route path='quiz/create' element={<ProductCreatePage />} />
+              <Route path='categories' element={<CategoriesPage />} />
+              <Route path='categories/create' element={<CreateCategories />} />
               <Route path='profile' element={<ProfilePage />} />
               <Route path='shop' element={<SettingPage />} />
               <Route path="orders" element={<OrderPage />} />
@@ -58,7 +62,7 @@ function App() {
             <Route path='/carts' element={<OrderPreviewPage />} />
             <Route path='/customer' element={<CreateCustomer />} />
             <Route path='/order' element={<ConfirmOrder />} />
-            <Route path='/details' element={<PubilcProductDetailsPage />} />
+            {/* <Route path='/details' element={<PubilcProductDetailsPage />} /> */}
             <Route path='/home' element={<Home />} />
             
             {

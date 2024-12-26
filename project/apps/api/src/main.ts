@@ -1,6 +1,5 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { TransformInterceptor } from './transform.interceptor';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
@@ -8,10 +7,11 @@ async function bootstrap() {
   // app.useGlobalInterceptors(new TransformInterceptor());
 
   const config = new DocumentBuilder()
-  .setTitle('Ocean Storage')
-  .setDescription('The Ocean Storage API description')
+  .setTitle('Shwe Ywet Hla')
+  .setDescription('Shwe Ywet Hla API description')
   .setVersion('1.0')
-  .addTag('Ocean')
+  .addTag('Shwe Ywet Hla')
+  .addBearerAuth()
   .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

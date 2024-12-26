@@ -3,7 +3,7 @@ import PicoButton from "../../componet/atoms/button/PicoButton"
 import SearchInput from "../../componet/atoms/Input/searchInput"
 import { useGetAllProducts } from "../../feature/query/products/getAllProducts"
 import { useNavigate } from "react-router-dom"
-import { ProductTable } from "../../componet/organisms/Tables/ProductsTable"
+// import { ProductTable } from "../../componet/organisms/Tables/ProductsTable"
 import { useEffect } from "react"
 
 const ProductsPage = () => {
@@ -26,7 +26,7 @@ const ProductsPage = () => {
                 <PicoButton label={ELABELS.newProducts} onPress={() => { navigate("create")}} />
             </div>
             <div className="flex flex-1 w-full flex-col mb-10">
-                <ProductTable data={getProducts.data?.dataList||[]} />
+                {/* <ProductTable data={getProducts.data?.dataList||[]} /> */}
             </div>
 
         </div>

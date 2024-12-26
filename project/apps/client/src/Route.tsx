@@ -15,7 +15,7 @@ function PrivateRoute({ children }:{children:any}) {
 function LoginRoute({ children }:{children:any}) {
 
     if (isLogin()) {
-        return <Navigate to="/owner/products" />
+        return <Navigate to="/owner/quiz" />
     }
     return children;
 }

@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil"
 import { CardContainer } from "../../atoms/Container/CardContainer"
-import { BasicTableBody, BasicTableBodyType } from "../../molecules/table/tBody"
+// import { BasicTableBody, BasicTableBodyType } from "../../molecules/table/tBody"
 import CheckTableHeader from "../../molecules/table/theader"
 import { ITableDetailsProps, TableDetails } from "./SubComponet/TableDetail"
 import { selectedDynamicTableRow } from "../../../feature/recoilState"
@@ -11,7 +11,7 @@ import { MuiPagenation } from "../../../Lib/@mui/pagiantion"
 export function Table<T>(props: {
     title: string[]
     data: T[],
-    types: BasicTableBodyType<T>,
+    types: any,//BasicTableBodyType<T>,
     detail: (data: T) => ITableDetailsProps
     mobileUiPlugin: (data: T) => JSX.Element,
     pagiantion?: {
@@ -29,7 +29,7 @@ export function Table<T>(props: {
                     <CardContainer>
                         <table className="table">
                             <CheckTableHeader headers={props.title} status={false} statusOnChange={() => { }} />
-                            <BasicTableBody types={props.types} data={props.data || []} />
+                            {/* <BasicTableBody types={props.types} data={props.data || []} /> */}
                         </table>
                     </CardContainer>
                 </ColumnContainer>

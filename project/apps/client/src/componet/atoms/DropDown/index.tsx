@@ -3,7 +3,7 @@ import InputLabel from "../Input/InputLabel"
 import { Icon, IconKey } from "../icons"
 
 interface IProps {
-    items: {key:string,label:string}[],
+    items: {key:string|number,label:string}[],
     onPress : (val:string) => void,
     label : ELABELS,
     icon ?: IconKey,

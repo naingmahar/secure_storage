@@ -1,5 +1,4 @@
 export interface IAuth {
-    sub: String;
+    userId: String;
     username: String;
-    name:string;
   }

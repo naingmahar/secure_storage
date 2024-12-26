@@ -142,7 +142,8 @@ export class FileService {
         },(err,data)=>{
             if(err) return rej(err);
             if(data) return res({
-              url:`${this.configService.get('AWS_END_POINT')}/${confirmKey}`
+              path:`${this.configService.get('AWS_END_POINT')}/${confirmKey}`,
+              url:confirmKey
             })
         })
     })  

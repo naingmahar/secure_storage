@@ -14,7 +14,7 @@ export interface IFormField {
     placeholder?:ELABELS,
     description?:ELABELS,
     fieldName:string,
-    dropDownItem?:{key:string,label:string}[],
+    dropDownItem?:{key:string|number,label:string}[],
     value?:any,
     disabled?:boolean,
 }

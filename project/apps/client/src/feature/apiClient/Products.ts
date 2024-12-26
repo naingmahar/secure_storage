@@ -1,3 +1,4 @@
+import { ICategory } from "../../types/models/ICategory";
 import { IPagination } from "../../types/models/IOrderRes";
 import { ICreateProduct, IProduct, TProductRes } from "../../types/models/IProducts";
 import { instance } from "./config/Instance";
@@ -16,6 +17,11 @@ export const fetchUpdateProduct = (id:string,data:ICreateProduct):Promise<TProdu
 
 export const fetchGetAllProducts = async ({shopId,page}:{shopId:number,page?:number}):Promise<IPagination<IProduct>> => {
     let res = await instance.get(END_POINT.auth_user_products+`/${shopId}?page=${page||1}`);
+    return res.data
+}
+
+export const fetchGetAllCategories = async ():Promise<ICategory[]> => {
+    let res = await instance.get(END_POINT.get_all_category);
     return res.data
 }
 

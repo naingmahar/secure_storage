@@ -131,7 +131,7 @@ import { IAuth } from 'src/auth/type/auth';
     async putFile(@Req() req,@UploadedFile() file, @Body() body:UploadFileDTO, @AuthUser() authUser: IAuth) {
       try { 
         const serviceRes = await this.fileService.fileUpload(file,body.path,body.key);
-        this.fileService.saveFile(body.key,body.path,authUser.sub)
+        // this.fileService.saveFile(body.key,body.path,authUser.userId)
         return serviceRes;
       } catch (error) {
         throw new Error(error)
@@ -141,7 +141,7 @@ import { IAuth } from 'src/auth/type/auth';
     @Get('myfile')
     async myFile(@Req() req, @AuthUser() authUser: IAuth) {
       try { 
-        let data = await this.fileService.getAllMyFiles(authUser.sub)
+        let data = await this.fileService.getAllMyFiles(authUser.userId)
         return data;
       } catch (error) {
         throw new Error(error)

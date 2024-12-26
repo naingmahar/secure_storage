@@ -13,21 +13,15 @@ export interface ICreateProduct{
     delivery_method_id:string
 }
 export interface IProduct {
-    id: number
-    name: string
-    description: string
-    created_at: string
-    updated_at: string
-    price: number
-    imagesUrl: ImagesUrl[]
-    images: string[]
-    additionalinfo: any
-    category_id: number
-    category_name: string
-    shop_id: number
-    shop_name: string
-    delivery_method_id: number
-    delivery_method: string
+    ans: string,
+    q1?: string,
+    q2?: string,
+    q3?: string,
+    q4?: string,
+    q5?: string,
+    q6?: string,
+    image?: string,
+    description: string,
 }
 
 export interface ImagesUrl {
